@@ -1,0 +1,227 @@
+.weather-result {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(290px, 0.85fr);
+    overflow: hidden;
+    border: 1px solid #dbe3dc;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 12px 30px rgba(37, 65, 51, 0.08);
+    animation: rise-in 500ms ease-out both;
+}
+
+.weather-current {
+    display: flex;
+    min-height: 350px;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 29px 34px 23px;
+    color: #f7f6eb;
+    background:
+        linear-gradient(135deg, rgba(233, 177, 86, 0.13), transparent 48%),
+        linear-gradient(145deg, #285e55, #347365);
+}
+
+.weather-location {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 14px;
+}
+
+.weather-overline {
+    margin: 0;
+    color: #c3d4c7;
+    font-size: 9px;
+    font-weight: 800;
+}
+
+.weather-location h2 {
+    display: flex;
+    align-items: baseline;
+    gap: 9px;
+    margin: 5px 0 0;
+    color: #fff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 27px;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.weather-location h2 span {
+    color: #c4d5ca;
+    font-family: "Avenir Next", "Trebuchet MS", "Segoe UI", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.local-time {
+    padding-top: 2px;
+    color: #d1dfd5;
+    font-size: 10px;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.weather-reading {
+    display: flex;
+    min-height: 170px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.temperature {
+    display: flex;
+    align-items: flex-start;
+    margin: 3px 0 -4px;
+    color: #fff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 88px;
+    line-height: 0.98;
+}
+
+.temperature sup {
+    margin-top: 8px;
+    font-family: "Avenir Next", "Trebuchet MS", "Segoe UI", sans-serif;
+    font-size: 29px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.condition-description {
+    margin-top: 7px;
+    color: #d7e3d9;
+    font-size: 13px;
+}
+
+.weather-icon {
+    width: 136px;
+    height: 136px;
+    object-fit: contain;
+    filter: drop-shadow(0 7px 8px rgba(13, 45, 37, 0.18));
+}
+
+.temperature-range {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(237, 246, 236, 0.23);
+    color: #c8d9ce;
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.temperature-range strong {
+    margin-left: 5px;
+    color: #fff;
+    font-size: 12px;
+}
+
+.range-divider {
+    width: 1px;
+    height: 13px;
+    background: rgba(237, 246, 236, 0.3);
+}
+
+.weather-details {
+    padding: 33px 31px 27px;
+    background: #fff;
+}
+
+.details-heading {
+    padding-bottom: 17px;
+}
+
+.details-heading .eyebrow {
+    color: #72877a;
+}
+
+.details-heading h3 {
+    margin: 5px 0 0;
+    color: #263f39;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.details-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin: 0;
+}
+
+.detail-item {
+    min-width: 0;
+    padding: 15px 10px 15px 0;
+    border-top: 1px solid #e6ebe5;
+}
+
+.detail-item:nth-child(even) {
+    padding-left: 13px;
+    border-left: 1px solid #e6ebe5;
+}
+
+.detail-item dt {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #77877d;
+    font-size: 10px;
+}
+
+.detail-item dt svg {
+    color: #527d6a;
+    font-size: 17px;
+}
+
+.detail-item dd {
+    margin: 7px 0 0 23px;
+    color: #263f39;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+@media (max-width: 760px) {
+    .weather-result {
+        grid-template-columns: 1fr;
+    }
+
+    .weather-current {
+        min-height: 320px;
+    }
+
+    .weather-details {
+        padding: 26px 32px 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .weather-current {
+        min-height: 290px;
+        padding: 23px 20px 19px;
+    }
+
+    .weather-location h2 {
+        flex-wrap: wrap;
+        gap: 5px 8px;
+        font-size: 24px;
+    }
+
+    .weather-reading {
+        min-height: 155px;
+    }
+
+    .temperature {
+        font-size: 75px;
+    }
+
+    .weather-icon {
+        width: 108px;
+        height: 108px;
+    }
+
+    .weather-details {
+        padding: 23px 20px 18px;
+    }
+}
